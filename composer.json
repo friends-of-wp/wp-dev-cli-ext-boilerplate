@@ -1,5 +1,6 @@
 {
   "name": "friends-of-wp/wp-dev-cli-ext-boilerplate",
+  "description": "WP DevCli Extension that takes care of plugin boilerplate creation.",
   "autoload": {
     "psr-4": {
       "FriendsOfWp\\BoilerplateDevCliExtension\\": "src/"
