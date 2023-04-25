@@ -1,5 +1,7 @@
 # `plugin:boilerplate:create`
 
+This a an extension to the [Friends of WP Command Line Tool for Developers](https://github.com/friends-of-wp/wp-dev-cli). This command is included in the default tool.
+
 ## Usage
 
 The usage of the boilerplate creation command is very easy. As the only parameter the plugin output directory is needed. All other configuration is done via the creation process starting afterwards.
@@ -19,7 +21,7 @@ It is possible to add individual steps to the boilerplate creation process. This
 ![CLI Output](images/boilerplate.png)
 
 
-The config file should have all the steps in there. All those steps will be processes in the order in that list. 
+The config file should have all the steps in there. All those steps will be processes in the order in that list.
 
 ```yaml
 steps:
@@ -31,7 +33,7 @@ steps:
 ```
 
 ## How to pre-define parameters
-When a custom config file is used it is possible to predefine the answers of some questions in the creation workflow. This helps for example if some answers are "always" the same like author or license. 
+When a custom config file is used it is possible to predefine the answers of some questions in the creation workflow. This helps for example if some answers are "always" the same like author or license.
 
 ```yaml
 parameters:
