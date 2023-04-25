@@ -1,0 +1,8 @@
+{
+  "name": "friends-of-wp/wp-dev-cli-ext-boilerplate",
+  "autoload": {
+    "psr-4": {
+      "FriendsOfWp\\BoilerplateDevCliExtension\\": "src/"
+    }
+  }
+}
