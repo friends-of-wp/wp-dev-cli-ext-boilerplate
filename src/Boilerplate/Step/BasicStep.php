@@ -38,32 +38,6 @@ abstract class BasicStep implements Step
     }
 
     /**
-     * Ask a simple yes/no question.
-     */
-    protected function askYesNoQuestion(string $messageWithQuestionmark, string $identifier = null): bool
-    {
-        $answer = $this->askQuestion(new Question($messageWithQuestionmark . '(yes/no)? '), $identifier);
-
-
-        if (!$answer) {
-            $result = true;
-        } else {
-            $answer = strtolower($answer);
-            if ($answer === 'n' || $answer === "no") {
-                $result = false;
-            } else {
-                $result = true;
-            }
-        }
-
-        if ($identifier) {
-            $this->getConfiguration()->setParameter($identifier, $result);
-        }
-
-        return $result;
-    }
-
-    /**
      * @inheritDoc
      */
     public function ask(): void
@@ -138,19 +112,22 @@ abstract class BasicStep implements Step
      */
     protected function enrichBoilerplateFile(array $enrichArray): void
     {
-        $this->enrichFile($this->getBoilerplateFileName(), $enrichArray);
+        $this->enrichFile($this->getConfiguration()->getPluginBootstrapFile(), $enrichArray);
     }
 
+    /**
+     * Remove parts of the boilerplate file.
+     */
     protected function removeFromBoilerplateFile(array $removeArray): void
     {
-        $this->enrichFile($this->getBoilerplateFileName(), $removeArray, '');
+        $this->enrichFile($this->getConfiguration()->getPluginBootstrapFile(), $removeArray, '');
     }
 
-    private function getBoilerplateFileName(): string
-    {
-        return $this->getConfiguration()->getOutputDir() . '/' . Configuration::PLUGIN_DIR . '/' . Configuration::PLUGIN_BOILERPLATE_FILE;
-    }
-
+    /**
+     * Ask a "Symfony question". This function will cache the result and avoids that the
+     * user has to anwer twice. It also takes care of the config file and will not ask
+     * for parameters that are already defined in the config file.
+     */
     protected function askQuestion(Question $question, string $identifier = null, $ignoreConfigurationParameter = false)
     {
         $configuration = $this->getConfiguration();
@@ -164,5 +141,31 @@ abstract class BasicStep implements Step
             }
             return $answer;
         }
+    }
+
+    /**
+     * Ask a simple yes/no question.
+     */
+    protected function askYesNoQuestion(string $messageWithQuestionmark, string $identifier = null): bool
+    {
+        $answer = $this->askQuestion(new Question($messageWithQuestionmark . '(yes/no)? '), $identifier);
+
+
+        if (!$answer) {
+            $result = true;
+        } else {
+            $answer = strtolower($answer);
+            if ($answer === 'n' || $answer === "no") {
+                $result = false;
+            } else {
+                $result = true;
+            }
+        }
+
+        if ($identifier) {
+            $this->getConfiguration()->setParameter($identifier, $result);
+        }
+
+        return $result;
     }
 }
