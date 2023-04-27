@@ -1,3 +1,5 @@
+<?php if (!defined('WPINC')) die; ?>
+
 <div class="wrap">
     <h1>Headline for <?php echo $pageName; ?></h1>
 
