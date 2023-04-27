@@ -8,7 +8,7 @@
  * registers the activation and deactivation functions, and defines a function
  * that starts the plugin.
  *
- * @link              https://github.com/friends-of-wp-hosting/WPSecurityScore
+ * @link              ##PLUGIN_URI##
  * @since             0.0.1
  * @package           ##PLUGIN_NORMALIZED_NAME##
  *
