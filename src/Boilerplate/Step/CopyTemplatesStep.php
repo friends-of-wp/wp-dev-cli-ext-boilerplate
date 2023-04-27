@@ -2,7 +2,7 @@
 
 namespace FriendsOfWp\BoilerplateDevCliExtension\Boilerplate\Step;
 
-class CopyTemplatesStep extends SimpleStep
+class CopyTemplatesStep extends BasicStep
 {
     public function run(): string
     {

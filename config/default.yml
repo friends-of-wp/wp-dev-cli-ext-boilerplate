@@ -1,7 +1,10 @@
 steps:
+  # Mandatory steps
   - \FriendsOfWp\BoilerplateDevCliExtension\Boilerplate\Step\InputValidationStep
   - \FriendsOfWp\BoilerplateDevCliExtension\Boilerplate\Step\InitializeStep
   - \FriendsOfWp\BoilerplateDevCliExtension\Boilerplate\Step\CopyTemplatesStep
+
+  - \FriendsOfWp\BoilerplateDevCliExtension\Boilerplate\Step\SetLicenseStep
   - \FriendsOfWp\BoilerplateDevCliExtension\Boilerplate\Step\PrepareAdminStep
   - \FriendsOfWp\BoilerplateDevCliExtension\Boilerplate\Step\ReplacingPlaceholdersStep
   - \FriendsOfWp\BoilerplateDevCliExtension\Boilerplate\Step\RenameMasterFileStep

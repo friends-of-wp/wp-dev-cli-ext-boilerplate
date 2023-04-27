@@ -9,7 +9,7 @@ use FriendsOfWp\BoilerplateDevCliExtension\Boilerplate\Configuration;
  *
  * @author nils.langner@startwind.io
  */
-class ReplacingPlaceholdersStep extends SimpleStep
+class ReplacingPlaceholdersStep extends BasicStep
 {
     const LIMITERS = '##';
 
@@ -46,7 +46,6 @@ class ReplacingPlaceholdersStep extends SimpleStep
             'PLUGIN_NORMALIZED_NAME' => $configuration->getNormalizedPluginName(),
             'PLUGIN_UNIQUE_NAME_CONST' => $configuration->getConstantPluginName()
         ];
-
 
         $filename = $configuration->getOutputDir() . '/' . $file;
 

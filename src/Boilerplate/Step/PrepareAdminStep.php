@@ -5,7 +5,7 @@ namespace FriendsOfWp\BoilerplateDevCliExtension\Boilerplate\Step;
 use FriendsOfWp\BoilerplateDevCliExtension\Boilerplate\Configuration;
 use Symfony\Component\Console\Question\Question;
 
-class PrepareAdminStep extends SimpleStep
+class PrepareAdminStep extends BasicStep
 {
     private array $adminPages = [];
 

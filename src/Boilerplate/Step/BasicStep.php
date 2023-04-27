@@ -8,7 +8,10 @@ use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Question\Question;
 
-abstract class SimpleStep implements Step
+/**
+ * This class is the basic class for all steps.
+ */
+abstract class BasicStep implements Step
 {
     private Configuration $configuration;
     private InputInterface $input;
@@ -108,7 +111,11 @@ abstract class SimpleStep implements Step
      */
     protected function enrichedCopy(string $from, string $to, $enrichArray = [], $limiters = '##')
     {
-        $fullEnrichArray = $enrichArray;
+        $defaultArray = [
+            'CURRENT_YEAR' => date('Y')
+        ];
+
+        $fullEnrichArray = array_merge($enrichArray, $defaultArray);
 
         $content = file_get_contents($from);
 
@@ -122,6 +129,26 @@ abstract class SimpleStep implements Step
     protected function enrichFile(string $file, array $enrichArray, $limiters = '##')
     {
         $this->enrichedCopy($file, $file, $enrichArray, $limiters);
+    }
+
+    /**
+     * Enrich the boilerplate file.
+     *
+     * This function can not be called after the RenameMasterFileStep or RenamePluginDirStep were called.
+     */
+    protected function enrichBoilerplateFile(array $enrichArray): void
+    {
+        $this->enrichFile($this->getBoilerplateFileName(), $enrichArray);
+    }
+
+    protected function removeFromBoilerplateFile(array $removeArray): void
+    {
+        $this->enrichFile($this->getBoilerplateFileName(), $removeArray, '');
+    }
+
+    private function getBoilerplateFileName(): string
+    {
+        return $this->getConfiguration()->getOutputDir() . '/' . Configuration::PLUGIN_DIR . '/' . Configuration::PLUGIN_BOILERPLATE_FILE;
     }
 
     protected function askQuestion(Question $question, string $identifier = null, $ignoreConfigurationParameter = false)

@@ -15,7 +15,7 @@ use Symfony\Component\Console\Question\Question;
  *
  * @todo ask for license
  */
-class InputValidationStep extends SimpleStep
+class InputValidationStep extends BasicStep
 {
     /**
      * @inheritDoc

@@ -14,7 +14,7 @@ use Symfony\Component\Console\Question\Question;
  *
  * @todo ask for license
  */
-class InitializeStep extends SimpleStep
+class InitializeStep extends BasicStep
 {
     /**
      * @inheritDoc

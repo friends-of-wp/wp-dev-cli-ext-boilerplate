@@ -2,7 +2,7 @@
 
 namespace FriendsOfWp\BoilerplateDevCliExtension\Boilerplate\Step;
 
-class CreatingSettingsConfigStep extends SimpleStep
+class CreatingSettingsConfigStep extends BasicStep
 {
     public function run(): string
     {

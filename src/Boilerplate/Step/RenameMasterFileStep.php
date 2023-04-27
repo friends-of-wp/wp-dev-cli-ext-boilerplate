@@ -4,7 +4,7 @@ namespace FriendsOfWp\BoilerplateDevCliExtension\Boilerplate\Step;
 
 use FriendsOfWp\BoilerplateDevCliExtension\Boilerplate\Configuration;
 
-class RenameMasterFileStep extends SimpleStep
+class RenameMasterFileStep extends BasicStep
 {
     /**
      * @inheritDoc

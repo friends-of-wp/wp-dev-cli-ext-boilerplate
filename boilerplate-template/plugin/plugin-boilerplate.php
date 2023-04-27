@@ -17,10 +17,10 @@
  * Plugin URI:        https://github.com/friends-of-wp-hosting/WPSecurityScore
  * Description:       ##PLUGIN_DESCRIPTION##
  * Version:           ##PLUGIN_VERSION##
- * Author:            Friends of WP hosting
- * Author URI:        https://github.com/friends-of-wp-hosting
- * License:           MIT
- * License URI:       https://opensource.org/license/mit/
+ * Author:            ##AUTHOR_NAME##
+ * Author URI:        ##AUTHOR_URI##
+ * License:           ##LICENSE##
+ * License URI:       ##LICENSE_URI##
  * Text Domain:       WPSecurityScore
  * Domain Path:       /languages
  */

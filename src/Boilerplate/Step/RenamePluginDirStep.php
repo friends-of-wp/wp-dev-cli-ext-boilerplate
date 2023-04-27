@@ -2,7 +2,7 @@
 
 namespace FriendsOfWp\BoilerplateDevCliExtension\Boilerplate\Step;
 
-class RenamePluginDirStep extends SimpleStep
+class RenamePluginDirStep extends BasicStep
 {
     /**
      * @inheritDoc

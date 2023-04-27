@@ -12,6 +12,7 @@ class Configuration
     const PARAM_PLUGIN_DESCRIPTION = 'core_plugin_description';
     const PARAM_PLUGIN_OUTPUT_DIR = 'core_plugin_output_directory';
     const PARAM_PLUGIN_VERSION = 'core_plugin_version';
+    const PARAM_PLUGIN_LICENSE = 'core_plugin_license';
 
     const PARAM_PLUGIN_IS_ADMIN = 'core_plugin_is_admin';
 
