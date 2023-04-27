@@ -14,7 +14,7 @@
  *
  * @wordpress-plugin
  * Plugin Name:       ##PLUGIN_NAME##
- * Plugin URI:        https://github.com/friends-of-wp-hosting/WPSecurityScore
+ * Plugin URI:        ##PLUGIN_URI##
  * Description:       ##PLUGIN_DESCRIPTION##
  * Version:           ##PLUGIN_VERSION##
  * Author:            ##AUTHOR_NAME##
